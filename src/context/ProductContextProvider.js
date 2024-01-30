@@ -33,12 +33,7 @@ const ProductContextProvider = ({ children }) => {
   };
 
   //!=========Edit=====================
-  const [todoDetail, setTodoDetail] = useState("");
 
-  const getTodoId = async (id) => {
-    const { data } = await axios(`${API}/${id}`);
-    setTodoDetail(data);
-  };
   async function editTodo(id, newTodo) {
     await axios.patch(`${API}/${id}`, newTodo);
   }
@@ -48,7 +43,7 @@ const ProductContextProvider = ({ children }) => {
     getTodos,
     todos,
     deleteTodo,
-    todoDetail,
+    // todoDetail,
     editTodo,
   };
 
